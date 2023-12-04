@@ -1,1 +1,42 @@
 # Face_Classification
+-Unsupervised Face Classification
+
+## Introduction
+This project focuses on classifying faces from a virtual meeting using an unsupervised approach. The goal is to extract embeddings from images and cluster them to group faces based on the person's identity.
+
+## Abstract
+The aim of this project is to classify faces from a virtual meeting using an unsupervised method. The task, trivial for humans, involves challenges such as varying light conditions, changes in faces due to age, or obstructions with accessories. The study centers on face recognition within a dataset of images from a virtual meeting, extracting embeddings, and clustering to achieve classification.
+
+## Dataset
+The dataset comprises three folders with images of individuals who attended the virtual meeting. Challenges include images of people wearing masks and images without faces. The project initially uses a subset of 200 photos for clustering, with plans to extend to the entire dataset.
+
+## Theoretical Background
+### Multi-task Cascaded Convolutional Networks (MTCNN)
+MTCNN is a framework developed for face detection and alignment, involving three stages: Proposal Network (P-Net), Refine Network (R-Net), and Output Network (O-Net).
+
+### Face Embeddings
+Face embeddings are vectors representing facial features extracted from images. The FaceNet model is used to generate 128-dimensional face embeddings for each image.
+
+### Clustering using DBSCAN
+DBSCAN is a density-based clustering algorithm grouping data points based on density and proximity. Parameters such as 'eps' (neighborhood radius) and 'MinPts' (minimum number of neighbors) are tuned to effectively cluster face embeddings.
+
+## Model Explanation
+The project follows these main steps:
+1. **Extracting Face**: Utilize the MTCNN detector to locate and crop faces from input images, cleaning the dataset by ignoring images with masks or no faces.
+2. **Creating Face Embeddings**: Use the FaceNet model to preprocess faces and generate 128-dimensional face embeddings for each image.
+3. **Clustering using DBSCAN**: Apply the DBSCAN clustering algorithm to group face embeddings based on similarity, effectively identifying individuals in the virtual meeting.
+
+## Clustering
+Clustering is an unsupervised learning method that divides data points into groups based on similarity. In this project, DBSCAN is used for clustering face embeddings.
+
+## DBSCAN (Density-based Clustering)
+DBSCAN algorithm identifies clusters based on density and proximity. It requires two parameters, 'eps' and 'MinPts', which are tuned for effective clustering.
+
+## Getting Started
+To get started with this project, follow these steps:
+1. Clone this repository to your local machine.
+2. Install the required dependencies (list them in a separate section or a requirements file).
+3. Follow the usage instructions below to run the project.
+
+## Contributor
+- Neha Obilisetty
